@@ -13,16 +13,22 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        subButton: {
+        subButtonHttp: {
             default: null,
             type: cc.Button
         },
-
+        subButtonWS: {
+            default: null,
+            type: cc.Button
+        },
         tipLabel: {
             default: null,
             type: cc.Label
         },
-
+        tipLabelWS: {
+            default: null,
+            type: cc.Label
+        },
         input: {
             default: null,
             type: cc.EditBox
@@ -30,7 +36,22 @@ cc.Class({
     },
 
     onLoad() {
+        this.ws = new WebSocket('ws://127.0.0.1:8182');
+        //开启websocket
+        this.ws.onopen = (event) => {
+            console.log("event========");
+            console.log(event);
+            console.log("event========");
+        }
 
+        let that = this;
+        //接受websocket的数据
+        this.ws.onmessage = (event) => {
+            console.log("onmessage========");
+            console.log(event);
+            console.log("onmessage========");
+            that.tipLabelWS.string = event.data;
+        }
     },
 
     //发送请求的方法
@@ -49,6 +70,12 @@ cc.Class({
             }
         }
         http.request(obj);
+    },
+
+    wsRequest() {
+        if(this.ws.readyState === WebSocket.OPEN) {
+            this.ws.send(this.input.string);
+        }
     },
 
 
