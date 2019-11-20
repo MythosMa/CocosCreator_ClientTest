@@ -13,37 +13,35 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        // foo: {
-        //     // ATTRIBUTES:
-        //     default: null,        // The default value will be used only when the component attaching
-        //                           // to a node for the first time
-        //     type: cc.SpriteFrame, // optional, default is typeof default
-        //     serializable: true,   // optional, default is true
-        // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },
+        subButton: {
+            default: null,
+            type: cc.Button
+        },
+
+        tipLabel: {
+            default: null,
+            type: cc.Label
+        },
+
+        input: {
+            default: null,
+            type: cc.EditBox
+        }
     },
-
-    // LIFE-CYCLE CALLBACKS:
-
-    // onLoad () {},
 
     onLoad() {
-        this.httpRequest();
+
     },
 
+    //发送请求的方法
     httpRequest() {
         let obj = {
             url : 'http://127.0.0.1:8181',
+            data:{
+                input: this.input.string
+            },
             success : (res) => {
-                console.log("success!");
-                console.log(res);
+                this.tipLabel.string = res.info;
             },
             fail: (res) => {
                 console.log("fail!");
@@ -57,6 +55,4 @@ cc.Class({
     start () {
 
     },
-
-    // update (dt) {},
 });
