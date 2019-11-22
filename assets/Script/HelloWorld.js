@@ -21,11 +21,19 @@ cc.Class({
             default: null,
             type: cc.Button
         },
+        subButtonWSGame: {
+            default: null,
+            type: cc.Button
+        },
         tipLabel: {
             default: null,
             type: cc.Label
         },
         tipLabelWS: {
+            default: null,
+            type: cc.Label
+        },
+        tipLabelWSGame: {
             default: null,
             type: cc.Label
         },
@@ -36,21 +44,32 @@ cc.Class({
     },
 
     onLoad() {
-        this.ws = new WebSocket('ws://127.0.0.1:8182');
+        this.gameWS = new WebSocket('ws://127.0.0.1:8183');
         //开启websocket
-        this.ws.onopen = (event) => {
-            console.log("event========");
+        this.chatWS.onopen = (event) => {
+            console.log("chatWS onopen========");
             console.log(event);
-            console.log("event========");
+            console.log("chatWS onopen========");
+        }
+        this.gameWS.onopen = (event) => {
+            console.log("gameWS onopen========");
+            console.log(event);
+            console.log("gameWS onopen========");
         }
 
         let that = this;
         //接受websocket的数据
-        this.ws.onmessage = (event) => {
-            console.log("onmessage========");
+        this.chatWS.onmessage = (event) => {
+            console.log("chatWS onmessage========");
             console.log(event);
-            console.log("onmessage========");
+            console.log("chatWS onmessage========");
             that.tipLabelWS.string = event.data;
+        }
+        this.gameWS.onmessage = (event) => {
+            console.log("gameWS onmessage========");
+            console.log(event);
+            console.log("gameWS onmessage========");
+            that.tipLabelWSGame.string = event.data;
         }
     },
 
@@ -73,11 +92,16 @@ cc.Class({
     },
 
     wsRequest() {
-        if(this.ws.readyState === WebSocket.OPEN) {
-            this.ws.send(this.input.string);
+        if(this.chatWS.readyState === WebSocket.OPEN) {
+            this.chatWS.send(this.input.string);
         }
     },
 
+    wsgRequest() {
+        if(this.gameWS.readyState === WebSocket.OPEN) {
+            this.gameWS.send(this.input.string);
+        }
+    },
 
     start () {
 
