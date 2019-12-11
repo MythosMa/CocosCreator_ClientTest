@@ -16,22 +16,6 @@ let Channel = cc.Enum({
 cc.Class({
   extends: cc.Component,
   properties: {
-    // foo: {
-    //     // ATTRIBUTES:
-    //     default: null,        // The default value will be used only when the component attaching
-    //                           // to a node for the first time
-    //     type: cc.SpriteFrame, // optional, default is typeof default
-    //     serializable: true,   // optional, default is true
-    // },
-    // bar: {
-    //     get () {
-    //         return this._bar;
-    //     },
-    //     set (value) {
-    //         this._bar = value;
-    //     }
-    // },
-
     chatLayout: {
       default: null,
       type: cc.Layout
@@ -109,6 +93,7 @@ cc.Class({
     this.channelTip.string = "密";
   },
 
+  //频道发言后显示在聊天界面的消息颜色 
   getChatItemColor(channel) {
       switch(channel) {
           case Channel.WORLD_CHANNEL:
@@ -120,29 +105,39 @@ cc.Class({
       }
   },
 
+  //接受到服务端返回的消息的处理
   getChatMessageFromServer(msg) {
     let msgJson = JSON.parse(msg);
+
+    //通过节点池或者预制体创建一个消息节点并放入到聊天消息界面节点中
     let chatItem = this.chatItemNodePool.size > 0 ? this.chatItemNodePool.get() : cc.instantiate(this.chatItemPrefab);
     chatItem.getComponent(cc.Label).string = msgJson.content;
     this.chatContent.addChild(chatItem);
+    //因为节点要加入到场景中，才能设置生效其中的属性，因为布局的关系，这里设置锚点和坐标如代码中
     chatItem.color = this.getChatItemColor(msgJson.channel);
     chatItem.anchor = cc.v2(0, 0);
     chatItem.setPosition(cc.v2(0, 0)); 
     
+    //因为消息窗口中，最新的消息总是显示在最下方，所以历史消息要根据新消息的高度向上移动
     let contentHeight = 0;
     for(let i in this.chatItems) {
         let oriPosition = this.chatItems[i].getPosition();
         this.chatItems[i].setPosition(cc.v2(oriPosition.x, oriPosition.y + chatItem.height));
         contentHeight += this.chatItems[i].height;
     }
+
+    //给聊天消息窗口的ScrollView设置新的高度，并限定最大高度，免得消息窗口被撑到太高翻起来麻烦
     contentHeight += chatItem.height;
     if(contentHeight > 1000) {
         contentHeight = 1000;
     }
+
+    //不知道什么原因，每次改变高度后坐标会变动，这里重新修改坐标
     this.chatItems.push(chatItem);
     this.chatContent.height = contentHeight;
     this.chatContent.setPosition(cc.v2(0, 0));
 
+    //遍历一下所有聊天消息节点，如果有超过聊天窗口高度的，从节点中移除，节约逻辑消耗
     for(let i in this.chatItems) {
         let oriPosition = this.chatItems[i].getPosition();
         if(this.chatItems[i].position.y > 1500){
