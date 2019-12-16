@@ -60,7 +60,7 @@ cc.Class({
   onLoad() {
     this.chatItems = [];
     this.userID = this.makeUUID();
-    this.chatWS = new WebSocket("ws://127.0.0.1:8183");
+    this.chatWS = new WebSocket("ws://122.51.6.183:8183");
     this.chatWS.onmessage = event => {
       this.getChatMessageFromServer(event.data);
     };
