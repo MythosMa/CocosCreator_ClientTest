@@ -9,42 +9,48 @@
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
 cc.Class({
-    extends: cc.Component,
+  extends: cc.Component,
 
-    properties: {
-        isShowChatLayout: false,
-        chatLayout: {
-            type: cc.Node,
-            default: null
-        },
-        chatLayoutControlBtnLabel: {
-            type: cc.Label,
-            default: null
-        }
+  properties: {
+    isShowChatLayout: false,
+    chatLayout: {
+      type: cc.Node,
+      default: null
     },
-
-    // LIFE-CYCLE CALLBACKS:
-
-    onLoad () {
-        
-    },
-
-    start () {
-
-    },
-
-    chatLayoutControlBtn() {
-        if(this.isShowChatLayout) {
-            let move = cc.moveBy(0.5, cc.v2(-this.chatLayout.width, 0));
-            this.chatLayout.runAction(move);
-            this.chatLayoutControlBtnLabel.string = "显";
-        }else {
-            let move = cc.moveBy(0.5, cc.v2(this.chatLayout.width, 0));
-            this.chatLayout.runAction(move);
-            this.chatLayoutControlBtnLabel.string = "隐";
-        }
-        this.isShowChatLayout = !this.isShowChatLayout;
+    chatLayoutControlBtnLabel: {
+      type: cc.Label,
+      default: null
     }
+  },
 
-    // update (dt) {},
+  // LIFE-CYCLE CALLBACKS:
+
+  onLoad() {
+    //手指在屏幕移动的监听
+    // this.node.on("touchstart", event => {
+    //     event.stopPropagation();
+    // });
+
+    // //监听鼠标用的
+    // this.node.on("mousedown", event => {
+    //     event.stopPropagation();
+    // });
+  },
+
+  start() {},
+
+  chatLayoutControlBtn() {
+    if (this.isShowChatLayout) {
+      let move = cc.moveBy(0.5, cc.v2(-this.chatLayout.width, 0));
+      this.chatLayout.runAction(move);
+      this.chatLayoutControlBtnLabel.string = "显";
+    } else {
+      let move = cc.moveBy(0.5, cc.v2(this.chatLayout.width, 0));
+      this.chatLayout.runAction(move);
+      this.chatLayoutControlBtnLabel.string = "隐";
+    }
+    this.isShowChatLayout = !this.isShowChatLayout;
+  }
+
+  // update (dt) {},
 });
