@@ -1,4 +1,17 @@
 class Tools {
+    constructor() {
+        this.webSocketServerUrl = "ws://127.0.0.1";
+        this.chatPort = "8183";
+        this.testMapPort = "8184";
+    }
+
+    getChatServerUrl() {
+        return this.webSocketServerUrl + ":" + this.chatPort;
+    }
+
+    getTestMapServerUrl() {
+        return this.webSocketServerUrl + ":" + this.testMapPort;
+    }
 
     //计算弧度
     getRadian(point) {
@@ -12,7 +25,6 @@ class Tools {
         let y = pos1.y - pos2.y ;
         return Math.sqrt(x * x + y * y) ;
     }
-    
 
 }
 

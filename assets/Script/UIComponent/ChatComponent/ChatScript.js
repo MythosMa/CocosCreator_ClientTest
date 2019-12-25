@@ -7,6 +7,8 @@
 // Learn life-cycle callbacks:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
+import Tools from '../../Common/Tools';
+
 let Channel = cc.Enum({
   WORLD_CHANNEL: 0,
   TEAM_CHANNEL: 1,
@@ -59,23 +61,16 @@ cc.Class({
 
   onLoad() {
     this.chatItems = [];
-    this.userID = this.makeUUID();
-    this.chatWS = new WebSocket("ws://127.0.0.1:8183");
-    this.chatWS.onmessage = event => {
-      this.getChatMessageFromServer(event.data);
-    };
-
     this.chatItemNodePool = new cc.NodePool();
   },
 
   start() {},
 
-  makeUUID() {
-    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
-      var r = (Math.random() * 16) | 0,
-        v = c == "x" ? r : (r & 0x3) | 0x8;
-      return v.toString(16);
-    });
+  setChatConnection() {
+    this.chatWS = new WebSocket(Tools.getChatServerUrl());
+    this.chatWS.onmessage = event => {
+      this.getChatMessageFromServer(event.data);
+    };
   },
 
   changeToWorldChannel() {
