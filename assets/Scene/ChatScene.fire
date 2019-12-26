@@ -3377,7 +3377,7 @@
     "joyStick": {
       "__id__": 70
     },
-    "playerCharactorPrefab": {
+    "playerCharacterPrefab": {
       "__uuid__": "7154a792-4c01-4835-b138-352f61549395"
     },
     "_id": "59cWtDUvZFJYdrBzPSsfzJ"
@@ -6945,7 +6945,7 @@
     "player": {
       "__id__": 68
     },
-    "playerCharactorPrefab": {
+    "playerCharacterPrefab": {
       "__uuid__": "7154a792-4c01-4835-b138-352f61549395"
     },
     "playerLayer": {

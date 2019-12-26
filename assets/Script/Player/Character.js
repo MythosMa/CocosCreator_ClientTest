@@ -13,9 +13,8 @@ cc.Class({
 
   properties: {},
 
-  // LIFE-CYCLE CALLBACKS:
-
   onLoad() {
+    //和服务器一样，角色的三个状态
     this.State = cc.Enum({
       STATE_STAND: 1,
       STATE_WALK_LEFT: -1,
@@ -26,11 +25,13 @@ cc.Class({
     this.animDisplay = null;
   },
 
+  //获取角色信息
   getPlayerData() {
     return this.playerData;
   },
 
-  initCharactor(data) {
+  //创建时，初始化角色信息
+  initCharacter(data) {
     this.playerData = data;
     let playerAttribute = data.playerAttribute;
     this.animDisplay = this.getComponent(dragonBones.ArmatureDisplay);
@@ -39,6 +40,7 @@ cc.Class({
     );
   },
 
+  //服务器发送过来角色数据，在这里更新
   refreshPlayerData(playerData) {
     let playerAttribute = playerData.playerAttribute;
     this.resetState(playerAttribute.currentState);
@@ -48,6 +50,7 @@ cc.Class({
     this.node.setScale(playerAttribute.scale.x, playerAttribute.scale.y);
   },
 
+  //根据状态切换角色动画，注意，这里切换动画的的骨骼名称、动画名称都是在龙骨编辑器里定义好的
   resetState(state) {
     if (this.currentState === state) {
       return;
@@ -67,6 +70,7 @@ cc.Class({
     this.currentState = state;
   },
 
+  //切换动画
   changeAnimation(armatureName, animationName, playTimes, callbacks) {
     if (
       this.animDisplay.armatureName === armatureName &&
@@ -82,7 +86,8 @@ cc.Class({
     this.animDisplay.playAnimation(animationName, playTimes);
   },
 
-  deleteCharactor() {
+  //将角色从界面中移除
+  deleteCharacter() {
     this.node.removeFromParent(true);
   }
 });
