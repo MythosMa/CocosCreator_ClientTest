@@ -59,6 +59,8 @@ cc.Class({
 
   // LIFE-CYCLE CALLBACKS:
 
+
+
   onLoad() {
     this.chatItems = [];
     this.chatItemNodePool = new cc.NodePool();
