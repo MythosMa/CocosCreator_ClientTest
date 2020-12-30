@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "5ada4405-d7d2-4298-9575-83c2b861fea7",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 103,
+  "height": 103,
   "platformSettings": {},
   "subMetas": {
     "JoystickBG": {

@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "3424c335-ece8-4b85-b53a-ce3a99155d8a",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 640,
+  "height": 480,
   "platformSettings": {},
   "subMetas": {
     "weatherG002": {

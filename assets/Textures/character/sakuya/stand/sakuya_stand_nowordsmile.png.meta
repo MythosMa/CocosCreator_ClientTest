@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.5",
   "uuid": "cad48f65-f3b8-4e10-b1c1-6996f7d1f2e9",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -7,6 +7,8 @@
   "premultiplyAlpha": false,
   "genMipmaps": false,
   "packable": true,
+  "width": 512,
+  "height": 512,
   "platformSettings": {},
   "subMetas": {
     "sakuya_stand_nowordsmile": {

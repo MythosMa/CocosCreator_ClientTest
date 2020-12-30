@@ -7,7 +7,12 @@
       true
     ]
   ],
-  "excluded-modules": [],
+  "excluded-modules": [
+    "3D Physics/cannon.js",
+    "3D Physics/Builtin",
+    "3D Particle",
+    "SafeArea"
+  ],
   "last-module-event-record-time": 1577274510335,
   "design-resolution-width": 1920,
   "design-resolution-height": 1080,
@@ -31,5 +36,9 @@
       "enable": false
     }
   },
-  "start-scene": "current"
+  "migrate-history": [
+    "cloud-function"
+  ],
+  "preview-port": 7456,
+  "clear-simulator-cache": true
 }
