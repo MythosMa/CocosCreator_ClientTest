@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "708f9069-a219-41ff-8336-712721033305",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "JoystickBar": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "4e14c17e-70b4-4d7d-8a86-11e96a4b8591",
+      "importer": "sprite-frame",
       "rawTextureUuid": "708f9069-a219-41ff-8336-712721033305",
       "trimType": "auto",
       "trimThreshold": 1,

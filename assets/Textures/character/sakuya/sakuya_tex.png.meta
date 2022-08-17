@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "f2f42d81-61cd-4519-b177-74ff25076ee5",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "sakuya_tex": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "ad423be1-49b9-4391-b7cc-7232d7bc14c7",
+      "importer": "sprite-frame",
       "rawTextureUuid": "f2f42d81-61cd-4519-b177-74ff25076ee5",
       "trimType": "auto",
       "trimThreshold": 1,

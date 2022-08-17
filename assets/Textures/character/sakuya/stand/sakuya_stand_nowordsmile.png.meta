@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "cad48f65-f3b8-4e10-b1c1-6996f7d1f2e9",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "sakuya_stand_nowordsmile": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "b280b86d-083f-4e94-bd4c-d32e912eacce",
+      "importer": "sprite-frame",
       "rawTextureUuid": "cad48f65-f3b8-4e10-b1c1-6996f7d1f2e9",
       "trimType": "auto",
       "trimThreshold": 1,

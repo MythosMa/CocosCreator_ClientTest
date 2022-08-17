@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "76e8cedb-5e3a-4e5e-a5e4-10f62eb23fc0",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "weatherN050": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "8d96a7cf-e080-49e7-a112-51923a560ba6",
+      "importer": "sprite-frame",
       "rawTextureUuid": "76e8cedb-5e3a-4e5e-a5e4-10f62eb23fc0",
       "trimType": "auto",
       "trimThreshold": 1,
