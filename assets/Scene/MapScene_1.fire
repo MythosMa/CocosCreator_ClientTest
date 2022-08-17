@@ -87,13 +87,13 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 154
-      },
-      {
-        "__id__": 155
-      },
-      {
         "__id__": 156
+      },
+      {
+        "__id__": 157
+      },
+      {
+        "__id__": 158
       }
     ],
     "_prefab": null,
@@ -3290,7 +3290,7 @@
         "__id__": 70
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": null,
     "_opacity": 255,
@@ -3425,7 +3425,7 @@
       "__uuid__": "472df5d3-35e7-4184-9e6c-7f41bee65ee3"
     },
     "_texture": null,
-    "_stopped": false,
+    "_stopped": true,
     "playOnLoad": true,
     "autoRemoveOnFinish": false,
     "totalParticles": 200,
@@ -3593,7 +3593,7 @@
       "__uuid__": "472df5d3-35e7-4184-9e6c-7f41bee65ee3"
     },
     "_texture": null,
-    "_stopped": false,
+    "_stopped": true,
     "playOnLoad": true,
     "autoRemoveOnFinish": false,
     "totalParticles": 200,
@@ -3862,7 +3862,7 @@
       "__id__": 77
     },
     "playerCharacterPrefab": {
-      "__uuid__": "7154a792-4c01-4835-b138-352f61549395"
+      "__uuid__": "cf541af2-4b8e-4d03-84bd-1a2bc718a068"
     },
     "_id": "59cWtDUvZFJYdrBzPSsfzJ"
   },
@@ -4213,13 +4213,13 @@
         "__id__": 85
       },
       {
-        "__id__": 145
+        "__id__": 146
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 153
+        "__id__": 155
       }
     ],
     "_prefab": null,
@@ -4301,6 +4301,9 @@
       },
       {
         "__id__": 144
+      },
+      {
+        "__id__": 145
       }
     ],
     "_prefab": null,
@@ -7027,6 +7030,16 @@
     "_id": "be0J1dA75OQ65cPNFI+YLz"
   },
   {
+    "__type__": "cc.BlockInputEvents",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 85
+    },
+    "_enabled": true,
+    "_id": "13JotvFTdFDYGJ6VR1uj8S"
+  },
+  {
     "__type__": "cc.Node",
     "_name": "ChatControlBtn ",
     "_objFlags": 0,
@@ -7035,13 +7048,16 @@
     },
     "_children": [
       {
-        "__id__": 146
+        "__id__": 147
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 151
+        "__id__": 152
+      },
+      {
+        "__id__": 154
       }
     ],
     "_prefab": null,
@@ -7097,20 +7113,20 @@
     "_name": "Background",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 145
+      "__id__": 146
     },
     "_children": [
       {
-        "__id__": 147
+        "__id__": 148
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 149
+        "__id__": 150
       },
       {
-        "__id__": 150
+        "__id__": 151
       }
     ],
     "_prefab": null,
@@ -7166,13 +7182,13 @@
     "_name": "Label",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 146
+      "__id__": 147
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 148
+        "__id__": 149
       }
     ],
     "_prefab": null,
@@ -7228,7 +7244,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 147
+      "__id__": 148
     },
     "_enabled": true,
     "_materials": [
@@ -7261,7 +7277,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 146
+      "__id__": 147
     },
     "_enabled": true,
     "_materials": [
@@ -7293,7 +7309,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 146
+      "__id__": 147
     },
     "_enabled": true,
     "alignMode": 0,
@@ -7320,7 +7336,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 145
+      "__id__": 146
     },
     "_enabled": true,
     "_normalMaterial": null,
@@ -7329,7 +7345,7 @@
     "zoomScale": 1.2,
     "clickEvents": [
       {
-        "__id__": 152
+        "__id__": 153
       }
     ],
     "_N$interactable": true,
@@ -7397,7 +7413,7 @@
       "__uuid__": "29158224-f8dd-4661-a796-1ffab537140e"
     },
     "_N$target": {
-      "__id__": 146
+      "__id__": 147
     },
     "_id": "4bYk9Vlt5E9bB3SqPDS8Ev"
   },
@@ -7412,6 +7428,16 @@
     "customEventData": ""
   },
   {
+    "__type__": "cc.BlockInputEvents",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 146
+    },
+    "_enabled": true,
+    "_id": "8ctfRoSO5BbaY7AG8dfocb"
+  },
+  {
     "__type__": "74168DXHKZCmq7KolSxwaIh",
     "_name": "",
     "_objFlags": 0,
@@ -7424,7 +7450,7 @@
       "__id__": 85
     },
     "chatLayoutControlBtnLabel": {
-      "__id__": 148
+      "__id__": 149
     },
     "_id": "3eR02qnuFFc4XhQ9/xb+Af"
   },
@@ -7457,7 +7483,7 @@
       "__id__": 75
     },
     "playerCharacterPrefab": {
-      "__uuid__": "7154a792-4c01-4835-b138-352f61549395"
+      "__uuid__": "cf541af2-4b8e-4d03-84bd-1a2bc718a068"
     },
     "playerLayer": {
       "__id__": 75

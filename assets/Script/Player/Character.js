@@ -11,14 +11,23 @@
 cc.Class({
   extends: cc.Component,
 
-  properties: {},
+  properties: {
+    ske: {
+      default: null,
+      type: cc.Node,
+    },
+    nameLabel: {
+      default: null,
+      type: cc.Label,
+    },
+  },
 
   onLoad() {
     //和服务器一样，角色的三个状态
     this.State = cc.Enum({
       STATE_STAND: 1,
       STATE_WALK_LEFT: -1,
-      STATE_WALK_RIGHT: -1
+      STATE_WALK_RIGHT: -1,
     });
     this.playerData = null;
     this.currentState = this.State.STATE_STAND;
@@ -33,8 +42,9 @@ cc.Class({
   //创建时，初始化角色信息
   initCharacter(data) {
     this.playerData = data;
+    this.animDisplay = this.ske.getComponent(dragonBones.ArmatureDisplay);
+    this.nameLabel.getComponent(cc.Label).string = data.playerName;
     let playerAttribute = data.playerAttribute;
-    this.animDisplay = this.getComponent(dragonBones.ArmatureDisplay);
     this.node.setPosition(
       cc.v2(playerAttribute.position.x, playerAttribute.position.y)
     );
@@ -47,7 +57,7 @@ cc.Class({
     this.node.setPosition(
       cc.v2(playerAttribute.position.x, playerAttribute.position.y)
     );
-    this.node.setScale(playerAttribute.scale.x, playerAttribute.scale.y);
+    this.ske.setScale(playerAttribute.scale.x, playerAttribute.scale.y);
   },
 
   //根据状态切换角色动画，注意，这里切换动画的的骨骼名称、动画名称都是在龙骨编辑器里定义好的
@@ -61,7 +71,7 @@ cc.Class({
         break;
       case this.State.STATE_WALK_LEFT:
         this.changeAnimation("SakuyaWalkFront", "SakuyaWalkFront", 0);
-        
+
         break;
       case this.State.STATE_WALK_RIGHT:
         this.changeAnimation("SakuyaWalkFront", "SakuyaWalkFront", 0);
@@ -89,5 +99,5 @@ cc.Class({
   //将角色从界面中移除
   deleteCharacter() {
     this.node.removeFromParent(true);
-  }
+  },
 });
